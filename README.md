@@ -23,6 +23,7 @@ Airbnb listings are spread across 10 cities, and each city has its own currency,
 | Power BI Desktop | Data model, DAX measures, four-page dashboard |
 | DAX | KPI measures (counts, medians, averages, shares) |
 | Custom JSON theme | Consistent warm colour palette and fonts |
+| Claude (Anthropic) | AI assistant: explained SQL and DAX concepts, helped troubleshoot errors and drafted documentation. All queries were run, checked and validated by me. |
 
 Excel was not used, as required by the assignment.
 
