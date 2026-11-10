@@ -1,0 +1,27 @@
+{
+  "name": "Airbnb Warm",
+  "dataColors": ["#B4471F", "#D98E2B", "#8C5A3C", "#E6C9A8", "#5C2E14", "#C9A27E", "#A0522D", "#F1E7DA"],
+  "background": "#FFFFFF",
+  "foreground": "#2B1E16",
+  "tableAccent": "#B4471F",
+  "textClasses": {
+    "callout": { "fontSize": 28, "fontFace": "Segoe UI Semibold", "color": "#2B1E16" },
+    "title": { "fontSize": 14, "fontFace": "Segoe UI Semibold", "color": "#2B1E16" },
+    "header": { "fontSize": 12, "fontFace": "Segoe UI Semibold", "color": "#2B1E16" },
+    "label": { "fontSize": 10, "fontFace": "Segoe UI", "color": "#6E5A4B" }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [{ "show": true, "color": { "solid": { "color": "#FFFFFF" } }, "transparency": 0 }],
+        "border": [{ "show": true, "color": { "solid": { "color": "#EADFD0" } }, "radius": 16 }],
+        "dropShadow": [{ "show": false }]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [{ "color": { "solid": { "color": "#FBF6EF" } }, "transparency": 0 }]
+      }
+    }
+  }
+}
