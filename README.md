@@ -36,41 +36,35 @@ Excel was not used, as required by the assignment.
 
 Prices are advertised nightly prices in each city's **local currency**. The data has no currency column.
 
-**Data source:** dataset supplied by AnalystLab Africa for the Week 1 assignment. The CSV files are not included in this repository because Reviews.csv is larger than GitHub's 100 MB file limit. To reproduce the work, place `Listings.csv` and `Reviews.csv` in `data/raw/`.
+**Data source:** dataset supplied by AnalystLab Africa for the Week 1 assignment. The CSV files are not included in this repository because Reviews.csv is larger than GitHub's 100 MB file limit. To reproduce the work, import `Listings.csv` and `Reviews.csv` as described in How to reproduce.
 
 ## 4. Repository structure
 
-```
-airbnb-market-intelligence/
-├── data/
-│   ├── raw/            Original CSVs (not committed if too large; see Setup)
-│   └── processed/      Optional exports of clean tables
-├── scripts/
-│   └── airbnb_market.sql      All SQL: inspection, cleaning, views, validation
-├── dashboard/
-│   ├── Air_bnb_Market_Dashboard.pbix
-│   └── airbnb_warm.json       Power BI theme
-├── docs/
-│   ├── project_log.pdf        Full step-by-step log, data quality report, KPI sheet, validation
-│   └── executive_summary.pdf  Findings and recommendations
-├── page1_market_overview.png   Dashboard screenshots
-├── page2_pricing.png
-├── page3_hosts.png
-├── page4_reviews.png
-└── README.md
-```
+All files sit in the main folder of the repository:
+
+| File | What it is |
+| --- | --- |
+| [AirBnbMarket.sql](AirBnbMarket.sql) | All SQL: inspection, cleaning, summary views, business questions and validation |
+| [Air_bnb_Market_Dashboard.pbix](Air_bnb_Market_Dashboard.pbix) | Power BI dashboard (4 pages) |
+| [Airbnb_warm.json](Airbnb_warm.json) | Power BI theme |
+| [Project log (PDF)](Airbnb%20Market%20Intelligence%20%E2%80%93%20Project%20Log%20%28Track%20A%20Data%20Analytics%29.pdf) | Full step-by-step log: data quality report, KPI definition sheet, business questions, validation evidence |
+| [Executive summary (PDF)](Executive%20Summary%20%E2%80%93%20Airbnb%20Market%20Intelligence.pdf) | Findings, recommendations and limitations |
+| page1_market_overview.png … page4_reviews.png | Dashboard screenshots |
+| README.md | This file |
+
+The raw CSV files are not included (see Data source above).
 
 ## 5. How to reproduce
 
 1. **Create the database.** In SSMS, run `CREATE DATABASE AirbnbMarket;`
 2. **Import the raw files.** Right-click the database → *Tasks → Import Flat File* for each CSV, creating tables `Listings` and `Reviews`. On the *Modify Columns* screen, set **every column to `nvarchar(MAX)` with nulls allowed**, and set no primary key. Everything is loaded as text on purpose so that bad values can be found and documented rather than blocking the import.
 3. **Check the row counts** match 279,712 and 5,373,143.
-4. **Run `scripts/airbnb_market.sql` in order.** It contains:
+4. **Run [`AirBnbMarket.sql`](AirBnbMarket.sql) in order.** It contains:
    - data quality checks (keys, duplicates, relationship, missing values, invalid prices, value formats)
    - creation of `Listings_clean` and `Reviews_clean` with proper data types (`TRY_CAST`)
    - summary views `vw_reviews_per_listing` and `vw_reviews_per_month_city`
    - the business-question and validation queries
-5. **Open the dashboard.** Open `dashboard/Air_bnb_Market_Dashboard.pbix`. If prompted, point the SQL Server source to your own server name (*Transform data → Data source settings*), then **Refresh**. The first refresh can take several minutes, because Power BI rebuilds the review summary views from 5.3 million rows.
+5. **Open the dashboard.** Open `Air_bnb_Market_Dashboard.pbix`. If prompted, point the SQL Server source to your own server name (*Transform data → Data source settings*), then **Refresh**. The first refresh can take several minutes, because Power BI rebuilds the review summary views from 5.3 million rows.
 
 ## 6. Method
 
@@ -109,7 +103,7 @@ airbnb-market-intelligence/
 | Superhost Share | `AVERAGE(Listings_clean[is_superhost])` (1/0 column, so the average is the share) |
 | Listings per Host | `DIVIDE([Total Listings], DISTINCTCOUNT(Listings_clean[host_id]))` |
 
-The full KPI definition sheet, with interpretation for each measure, is in `docs/project_log.pdf`.
+The full KPI definition sheet, with interpretation for each measure, is in the [project log](Airbnb%20Market%20Intelligence%20%E2%80%93%20Project%20Log%20%28Track%20A%20Data%20Analytics%29.pdf).
 
 ## 7. Dashboard
 
@@ -155,7 +149,7 @@ Two discrepancies were found and fixed:
 6. 30.8% of listings have no reviews; Rome averages 40 reviews per listing, Istanbul 8.
 7. Review activity grew every year to 1.63 million in 2019, then fell 54% in 2020.
 
-Recommendations and how to evaluate them are in `docs/executive_summary.pdf`.
+Recommendations and how to evaluate them are in the [executive summary](Executive%20Summary%20%E2%80%93%20Airbnb%20Market%20Intelligence.pdf).
 
 ## 10. Assumptions and limitations
 
