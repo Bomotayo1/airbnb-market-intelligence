@@ -53,11 +53,10 @@ airbnb-market-intelligence/
 ├── docs/
 │   ├── project_log.pdf        Full step-by-step log, data quality report, KPI sheet, validation
 │   └── executive_summary.pdf  Findings and recommendations
-├── screenshots/
-│   ├── page1_market_overview.png
-│   ├── page2_pricing.png
-│   ├── page3_hosts.png
-│   └── page4_reviews.png
+├── page1_market_overview.png   Dashboard screenshots
+├── page2_pricing.png
+├── page3_hosts.png
+├── page4_reviews.png
 └── README.md
 ```
 
@@ -124,16 +123,16 @@ The full KPI definition sheet, with interpretation for each measure, is in `docs
 Every page has City, Room type and Property type slicers. On the Pricing page the city slicer is **single select**, so prices are never mixed across currencies.
 
 ### Page 1 · Market Overview
-![Market Overview](screenshots/page1_market_overview.png)
+![Market Overview](page1_market_overview.png)
 
 ### Page 2 · Pricing & Property
-![Pricing](screenshots/page2_pricing.png)
+![Pricing](page2_pricing.png)
 
 ### Page 3 · Host Performance
-![Hosts](screenshots/page3_hosts.png)
+![Hosts](page3_hosts.png)
 
 ### Page 4 · Review Activity & Listing Scores
-![Reviews](screenshots/page4_reviews.png)
+![Reviews](page4_reviews.png)
 
 ### Presentation video
 A 5–10 minute walkthrough of the project: [Watch the presentation](PASTE_YOUR_VIDEO_LINK_HERE)
