@@ -129,7 +129,11 @@ Every page has City, Room type and Property type slicers. On the Pricing page th
 ![Reviews](page4_reviews.png)
 
 ### Presentation video
-A 5–10 minute walkthrough of the project: [Watch the presentation](PASTE_YOUR_VIDEO_LINK_HERE)
+A walkthrough of the project, the data checks, the dashboard and the findings:
+
+[![Watch the presentation on YouTube](https://img.youtube.com/vi/pEgfdHiaweQ/hqdefault.jpg)](https://youtu.be/pEgfdHiaweQ)
+
+▶️ [Watch the presentation on YouTube](https://youtu.be/pEgfdHiaweQ)
 
 ## 8. Validation
 
